@@ -9,8 +9,8 @@ public static class Solution
         {
             var current = nums[i];
             var complement = target - current;
-            if (seen.ContainsKey(complement))
-                return new[] { seen[complement], i };
+            if (seen.TryGetValue(complement, out var seenValue))
+                return new[] { seenValue, i };
             seen[current] = i;
         }
 
