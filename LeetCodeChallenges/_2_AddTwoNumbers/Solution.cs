@@ -1,21 +1,31 @@
 using System.Collections;
+using System.Xml;
 
 namespace LeetCodeChallenges.Tests._2_AddTwoNumbers;
 
 public class Solution
 {
-    public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+    public static ListNode AddTwoNumbers(ListNode l1, ListNode l2, int carry = 0)
     {
-        throw new NotImplementedException();
+        var sum = l1.Val + l2.Val + carry;
+        var newCarry = sum / 10;
+        var newVal = sum % 10;
+
+        if (l1.Next == null && l2.Next == null && newCarry == 0)
+            return new ListNode(newVal, null);
+
+        return new ListNode(sum % 10, 
+            AddTwoNumbers(l1.Next ?? ListNode.Zero, l2.Next ?? ListNode.Zero, sum / 10));
     }
 }
 
 public class ListNode : IEnumerable<int>
 {
-    private int Val { get; }
-    private ListNode? Next { get; set; }
+    public static ListNode Zero => new ListNode(0, null);
+    public int Val { get; }
+    public ListNode? Next { get; set; }
 
-    private ListNode(int val = 0, ListNode? next = null)
+    public ListNode(int val = 0, ListNode? next = null)
     {
         Val = val;
         Next = next;
