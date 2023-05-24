@@ -15,7 +15,7 @@ public class Solution
             return new ListNode(newVal, null);
 
         return new ListNode(sum % 10, 
-            AddTwoNumbers(l1.Next ?? ListNode.Zero, l2.Next ?? ListNode.Zero, sum / 10));
+            AddTwoNumbers(l1.Next ?? ListNode.Zero, l2.Next ?? ListNode.Zero, newCarry));
     }
 }
 
