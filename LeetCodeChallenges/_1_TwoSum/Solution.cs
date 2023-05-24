@@ -1,4 +1,4 @@
-namespace LeetCodeChallenges.Tests.TwoSum;
+namespace LeetCodeChallenges.Tests._1_TwoSum;
 
 public static class Solution
 {
