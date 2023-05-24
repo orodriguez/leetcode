@@ -21,7 +21,6 @@ public class Solution
 
 public class ListNode
 {
-    public static ListNode Zero => new ListNode(0, null);
     public int val;
     public ListNode next;
     public ListNode(int val = 0, ListNode next = null)
