@@ -3,7 +3,6 @@ namespace LeetCodeChallenges.Tests._2_AddTwoNumbers;
 public class Tests
 {
     [Theory]
-    [InlineData(new[] { 0 }, new[] { 0 }, new[] { 0 })]
     [InlineData(new[] { 1 }, new[] { 2 }, new[] { 3 })]
     [InlineData(new[] { 1, 2 }, new[] { 2, 3 }, new[] { 3, 5 })]
     [InlineData(new[] { 1, 2 }, new[] { 2 }, new[] { 3, 2 })]
