@@ -15,6 +15,15 @@ public class GroupAnagramsTests
                     new List<string> { "nat", "tan" },
                     new List<string> { "ate", "eat", "tea" }
                 }
+            },
+            {
+                new[] { "pasa", "sapa", "apas", "sopa", "sapo", "posa", "paso", "poso" },
+                new List<IList<string>>
+                {
+                    new List<string> { "pasa", "sapa", "apas" },
+                    new List<string> { "sopa", "sapo", "posa", "paso" },
+                    new List<string> { "poso" }
+                }
             }
         };
 
@@ -25,8 +34,8 @@ public class GroupAnagramsTests
         Assert.Equal(BuildString(expected), BuildString(input.GroupAnagrams()));
 
     private string BuildString(IEnumerable<IList<string>> groups) => 
-        string.Join(',', groups.Select(BuildString).Order());
+        $"[${string.Join(',', groups.Select(BuildString).Order())}]";
 
     private static string BuildString(IList<string> list) => 
-        string.Join(',', list.Order());
+        $"[${string.Join(',', list.Order())}]";
 }
