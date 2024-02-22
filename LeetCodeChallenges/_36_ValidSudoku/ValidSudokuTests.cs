@@ -128,14 +128,14 @@ public class ValidSudokuTests
             {
                 var value = board[i][j];
 
-                if (!IsValidSection("r" + i, value)) return false;
-                if (!IsValidSection("c" + j, value)) return false;
-                if (!IsValidSection($"b{i/3}{j/3}", value)) return false;
+                if (!ValidateSection("r" + i, value)) return false;
+                if (!ValidateSection("c" + j, value)) return false;
+                if (!ValidateSection($"b{i/3}{j/3}", value)) return false;
             }
         }
         return true;
         
-        bool IsValidSection(string sectionKey, char value)
+        bool ValidateSection(string sectionKey, char value)
         {
             if (!sections.ContainsKey(sectionKey))
                 sections[sectionKey] = new List<char>();
