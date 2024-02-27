@@ -34,7 +34,7 @@ public class MinStackTests
     }
     
     [Fact]
-    public void GetMin_CaseX()
+    public void GetMin_RemoveDuplicatedMin()
     {
         var s = new MinStack();
         s.Push(0);
