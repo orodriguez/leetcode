@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Xml;
+// ReSharper disable InconsistentNaming
 
 namespace LeetCodeChallenges.Tests._2_AddTwoNumbers;
 
@@ -22,8 +23,8 @@ public class Solution
 public class ListNode
 {
     public int val;
-    public ListNode next;
-    public ListNode(int val = 0, ListNode next = null)
+    public ListNode? next;
+    public ListNode(int val = 0, ListNode next = null!)
     {
         this.val = val;
         this.next = next;
