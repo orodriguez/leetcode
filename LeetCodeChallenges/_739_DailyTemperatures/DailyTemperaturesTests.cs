@@ -20,6 +20,7 @@ public class DailyTemperaturesTests
         var stack = new Stack<int>();
         for (var i = 0; i < temps.Length; i++)
         {
+            // Monotonic Stack
             while (stack.Any() && temps[stack.Peek()] < temps[i])
             {
                 var index = stack.Pop();
