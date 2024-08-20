@@ -3,17 +3,17 @@ import Stack from '../stack';
 const isValidParentheses = (str: string) => {
     const expectedTokens = new Stack<string>;
 
-    const tokens = new Map<string, string>([
+    const pairs = new Map<string, string>([
         ['(', ')'],
         ['[', ']'],
         ['{', '}'],
     ]);
 
-    const closers = Array.from(tokens.values());
+    const closers = Array.from(pairs.values());
 
     for (var chr of str) {
-        if (tokens.has(chr))
-            expectedTokens.push(tokens.get(chr)!);
+        if (pairs.has(chr))
+            expectedTokens.push(pairs.get(chr)!);
 
         if (closers.includes(chr) && chr !== expectedTokens.pop())
             return false;
