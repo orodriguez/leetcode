@@ -1,4 +1,4 @@
-import Stack from '../stack';
+import Stack from '../data-structures/stack';
 
 const isValidParentheses = (str: string) => {
     const expectedTokens = new Stack<string>;
